@@ -1,0 +1,50 @@
+
+server:
+  port: 9000
+
+logging:
+  level:
+    org.springframework.security: trace
+
+spring:
+  application:
+    name: spring-authorization-sample
+  security:
+    user:
+      name: user1
+      password: password
+    oauth2:
+      authorizationserver:
+        client:
+          confidential-client:
+            registration:
+              client-id: "confidential-client"
+              client-secret: "{noop}secret"
+              client-authentication-methods:
+                - "client_secret_basic"
+              authorization-grant-types:
+                - "authorization_code"
+                - "refresh_token"
+                - "client_credentials"
+              redirect-uris:
+                - "http://127.0.0.1:8080/login/oauth2/code/confidential-client-oidc"
+              scopes:
+                - "openid"
+                - "profile"
+                - "message.read"
+            require-authorization-consent: true
+          public-client:
+            registration:
+              client-id: "public-client"
+              client-authentication-methods:
+                - "none"
+              authorization-grant-types:
+                - "authorization_code"
+              redirect-uris:
+                - "http://127.0.0.1:8080/login/oauth2/code/public-client-oidc"
+              scopes:
+                - "openid"
+                - "profile"
+                - "message.read"
+            require-authorization-consent: true
+            require-proof-key: true

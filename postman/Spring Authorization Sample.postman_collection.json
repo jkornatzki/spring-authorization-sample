@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "8cb75b26-f6b7-4ddf-82bf-c5e6e9e0600f",
+		"name": "Spring Authorization Sample",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29654337"
+	},
+	"item": [
+		{
+			"name": "Confidential client token request",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "redirect_uri",
+							"value": "http://127.0.0.1:8080/login/oauth2/code/confidential-client-oidc",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "confidential-client",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "authorization_code_with_pkce",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "message.read",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "http://localhost:9000/oauth2/authorize",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://localhost:9000/oauth2/token",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "spring auth",
+							"type": "string"
+						},
+						{
+							"key": "headerPrefix",
+							"value": "Bearer ",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Public client token request",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "grant_type",
+							"value": "authorization_code_with_pkce",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "message.read",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "http://localhost:9000/oauth2/token",
+							"type": "string"
+						},
+						{
+							"key": "authUrl",
+							"value": "http://localhost:9000/oauth2/authorize",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "public-client",
+							"type": "string"
+						},
+						{
+							"key": "code_verifier",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "challengeAlgorithm",
+							"value": "S256",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "",
+							"type": "string"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://127.0.0.1:8080/login/oauth2/code/public-client-oidc",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "spring auth",
+							"type": "string"
+						},
+						{
+							"key": "headerPrefix",
+							"value": "Bearer ",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
